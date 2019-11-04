@@ -1,0 +1,11 @@
+<div class="container">
+<h1 class="text-center"> Applicants</h1>
+  <ul type="none"  class="applicant" *ngFor="let applicant of allApplicant">
+    <a [routerLink]="['/profile']" routerLinkActive="router-link-active" (click)="applicantDetails(applicant._id)" >{{applicant.name}}</a>
+    <hr>
+
+
+  </ul>
+  <hr>
+</div>
+

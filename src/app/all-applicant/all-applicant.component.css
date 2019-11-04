@@ -1,0 +1,18 @@
+.applicant{
+
+  background-color: rgb(179, 179, 179);
+
+}
+.container{
+  background-color: rgb(179, 179, 179);
+
+}
+
+h1{
+  font-weight: bold;
+}
+
+a:hover{
+  text-decoration: none;
+  color: white;
+}

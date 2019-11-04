@@ -1,0 +1,77 @@
+<div class="login-wrap">
+    <div class="login-html">
+      <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">New Application Form</label>
+      <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+      <div class="login-form">
+        <div class="sign-in-htm">
+          <form [formGroup]="form1" (ngSubmit)="onForm1()">
+          <div class="group">
+            <label for="user" class="label" >Name</label>
+            <input id="user" type="text" class="input" formControlName="name" >
+          </div>
+          <div class="group">
+            <label for="email" class="label">Email</label>
+            <input id="email" type="email" class="input" data-type="email" formControlName="email">
+          </div>
+          <div class="group">
+            <label for="phone" class="label">Phone</label>
+            <input id="phone" type="number" class="input" data-type="phone" formControlName="phone">
+          </div>
+          <div class="group">
+            <label for="nic" class="label">NIC</label>
+            <input id="nic" type="text" class="input" data-type="nic" formControlName="NIC">
+          </div>
+          <div class="group">
+            <input id="check" type="checkbox" class="check" checked>
+            <!-- <label for="check"><span class="icon"></span> Keep me Signed in</label> -->
+          </div>
+
+          <!-- <div class="group">
+            <input type="submit" class="button" value="Save">
+          </div> -->
+          <div class="hr"></div>
+          <div class="foot-lnk">
+              <div class="group">
+                  <input type="submit" class="button" value="Save">
+                </div>
+          </div>
+        </form>
+        </div>
+        <div class="sign-up-htm">
+          <form [formGroup]="form2" (ngSubmit)="onForm2()">
+            <div class="group">
+                <label for="cv" class="label">CV</label>
+                <input id="cv" type="text" class="input" data-type="cv">
+              </div>
+              <div class="group">
+                  <label for="linkedin" class="label">Linkdin</label>
+                  <input id="linkedin" type="text" class="input" formControlName="LinkIn" >
+                </div>
+                <div class="group">
+                    <label for="sal" class="label">Expected Salary</label>
+                    <input id="sal" type="number" class="input" formControlName="expectedSalary">
+                </div>
+                <div class="group">
+                    <label for="Availability" class="label">Availability</label>
+                    <input id="Availability" type="text" class="input" formControlName="availability" >
+              </div>
+              <div class="group">
+                      <label for="Priority" class="label">Priority Processing</label>
+                      <input id="Priority" type="text" class="input"  formControlName="priority">
+              </div>
+              <div class="group">
+                        <label for="Referral" class="label">Referral</label>
+                        <input id="Referral" type="text" class="input"  formControlName="referral">
+              </div>
+          <div class="group">
+            <input type="submit" class="button" value="Upload">
+          </div>
+          <div class="hr"></div>
+          <div class="foot-lnk">
+            <!-- <a label for="tab-1">Save</a> -->
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,206 @@
+<div class="row">
+  <div class="col-md-5" style="padding-left:30px">
+      <h1>{{applicant.name}}</h1>
+    </div>
+    <div class="col-md-1">
+        <i class="fa fa-thumbs-o-up" style="font-size:40px; padding:8px"></i>
+    </div>
+    <div class="col-md-5" style="font-size:35px; padding: 2px">
+        <!-- <span class="fa fa-star"></span>&nbsp;
+        <span class="fa fa-star"></span>&nbsp;
+        <span class="fa fa-star-o"></span>&nbsp;
+        <span class="fa fa-star-o"></span>&nbsp;
+        <span class="fa fa-star-o"></span>&nbsp; -->
+        <div>
+            <star-rating value="5" checkedcolor="red" uncheckedcolor="black" size="24px"    readonly="false" (rate)="onRate($event)"></star-rating>
+          </div>
+    </div>
+</div>
+
+
+<div>
+<ngb-tabset>
+  <ngb-tab title="Summary">
+    <ng-template ngbTabContent>
+      <br>
+      <div class="row">
+          <div class="col-md-3 offset-md-1 row" style="background-color:gray; height: 50px" >
+              <h4 style="padding-top: 10px;">Status</h4>
+              <div style="padding-top: 15px; margin-left: 20px">
+                  <select style="height: 25px; width: 150px;">
+                      <option value="shortlisted">Shortlisted</option>
+                      <option value="saab">Option 1</option>
+                      <option value="opel">Option 2</option>
+                      <option value="audi">Option 3</option>
+                    </select>
+              </div>
+            </div>
+            <div class="col-md-3 offset-md-1">
+                <i class="fa fa-download" style="font-size:40px; padding:8px" aria-hidden="true"></i>&nbsp;
+                <i class="fa fa-linkedin-square" style="font-size:40px; padding:8px" aria-hidden="true"></i>
+            </div>
+      </div>
+      <br><br>
+      <div class="row">
+        <div class="col-md-3 offset-md-1">
+            <div class="row">
+                <i class="fa fa-user-o" style="font-size:40px; padding:8px" aria-hidden="true"></i>
+                <h4 style="padding:8px"> {{applicant.name}}</h4>
+            </div>
+            <br>
+            <div class="row">
+                <i class="fa fa-envelope-o" style="font-size:40px; padding:8px" aria-hidden="true"></i>
+                <h4 style="padding:8px">{{applicant.email}}</h4>
+            </div>
+            <br>
+            <div class="row">
+                <i class="fa fa-phone" style="font-size:40px; padding:8px" aria-hidden="true"></i>
+                <h4 style="padding:8px"> {{applicant.phone}}</h4>
+            </div>
+        </div>
+
+        <div class="col-md-4" style="height: 150px">
+            <div class="w3-panel w3-yellow" style="padding:10px;">
+                <p>We should get this guy for our Geveo HR Team.</p>
+              </div>
+        </div>
+
+      </div>
+      <br><br>
+      <div class="col-md-12 offset-md-1">
+          <i class="fa fa-info-circle" aria-hidden="true">&nbsp; <b>Applied for position: Software Engineer, on 27 Dec 2017</b></i>
+      </div>
+      <div class="col-md-10 offset-md-1" style="background-color:black"></div>
+      <div class="col-md-3 offset-md-5" style="padding: 15px;">
+        <button class="btn btn-success">Save</button>&nbsp;
+        <button class="btn btn-danger">Cancel</button>
+      </div>
+
+
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab title="General">
+    <ng-template ngbTabContent>
+        <div class="col-md-10 offset-md-1" style="padding:20px;">
+            <!-- <form>
+                <div class="form-group row">
+                  <label class="col-md-1" for="name">Name</label>
+                  <input  type="text" class=" col-md-8 form-control" id="name" [(ngModel)]="name" name="name" required>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-md-1" for="email">Email</label>
+                    <input  type="email" class=" col-md-8 form-control" id="email" [(ngModel)]="email" name="email" required>
+                  </div>
+
+                  <div class="form-group row">
+                      <label class="col-md-1" for="mobile">Phone</label>
+                      <input  type="number" class=" col-md-8 form-control" id="mobile" [(ngModel)]="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-1" for="nic">NIC</label>
+                        <input  type="text" class=" col-md-8 form-control" id="nic" [(ngModel)]="nic" name="nic" required>
+                      </div>
+
+                      <div class="form-group row">
+                          <label class="col-md-1" for="cv">CV</label>
+                          <i class="fa fa-download" style="font-size:20px" aria-hidden="true"></i>&nbsp;
+                        </div>
+
+                      <div class="form-group row">
+                          <label class="col-md-1" for="linkedin">LinkedIn</label>
+                          <input  type="text" class=" col-md-8 form-control" id="linkedin" [(ngModel)]="linkedin" name="linkedin" required>&nbsp;&nbsp;
+                          <i class="fa fa-linkedin-square" style="font-size:35px;" aria-hidden="true"></i>
+                        </div>
+              </form> -->
+
+              <form>
+                  <div class="form-group row">
+                    <label class="col-md-1" for="name">Name</label>
+                    <input  type="text" class=" col-md-8 form-control" id="name"  required value="{{applicant.name}}" >
+                  </div>
+
+                  <div class="form-group row">
+                      <label class="col-md-1" for="email">Email</label>
+                      <input  type="email" class=" col-md-8 form-control" id="email" required value="{{applicant.email}}">
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-1" for="mobile">Phone</label>
+                        <input  type="number" class=" col-md-8 form-control" id="mobile"  required value="{{applicant.phone}}">
+                      </div>
+
+                      <div class="form-group row">
+                          <label class="col-md-1" for="nic">NIC</label>
+                          <input  type="text" class=" col-md-8 form-control" id="nic"  required value="{{applicant.NIC}}">
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-md-1" for="cv">CV</label>
+                            <i class="fa fa-download" style="font-size:20px" aria-hidden="true"></i>&nbsp;
+                          </div>
+
+                        <div class="form-group row">
+                            <label class="col-md-1" for="linkedin">LinkedIn</label>
+                            <input  type="text" class=" col-md-8 form-control" id="linkedin"  required value="{{applicant.linkedIn}}" >&nbsp;&nbsp;
+                            <i class="fa fa-linkedin-square" style="font-size:35px;" aria-hidden="true"></i>
+                          </div>
+                </form>
+            </div>
+        <div class="col-md-10 offset-md-1" style="background-color:black"></div>
+      <div class="col-md-3 offset-md-5" style="padding: 15px;">
+        <button class="btn btn-success">Save</button>&nbsp;
+        <button class="btn btn-danger">Cancel</button>
+      </div>
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab title="Evaluation">
+      <ng-template ngbTabContent>
+        <div class="col-md-10 offset-md-1" style="padding: 20px;">
+          <form>
+              <div class="form-group">
+                  <label for="incomment">Interview Comments</label>
+                  <app-ngx-editor [placeholder]="'Enter text here...'" [spellcheck]="true" [(ngModel)]="interviewComment" name="interviewComment"></app-ngx-editor>
+                </div><br>
+                <div class="form-group row">
+                    <label class="col-md-3" for="score">Overall Interview Score</label>
+                    <input  type="text" class=" col-md-1 form-control" id="score" style="height: 35px" required [(ngModel)]="interviewScore" name="interviewScore">&nbsp;<p style="font-size:20px">/10</p>
+                  </div>
+                  <div class="form-group">
+                      <label for="coderesult">Coding Excercise / Written Test Results</label>
+                      <app-ngx-editor [placeholder]="'Enter text here...'" [spellcheck]="true" [(ngModel)]="testResult" name="testResult"></app-ngx-editor>
+                    </div>
+
+          </form>
+        </div>
+
+        <div class="col-md-10 offset-md-1" style="background-color:black"></div>
+      <div class="col-md-3 offset-md-5" style="padding: 15px;">
+        <button class="btn btn-success" (click)='onEvaluation()'>Save</button>&nbsp;
+        <button class="btn btn-danger">Cancel</button>
+      </div>
+
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab title="Salary Details">
+        <ng-template ngbTabContent>
+
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab title="Notes">
+          <ng-template ngbTabContent>
+
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab title="History Log">
+            <ng-template ngbTabContent>
+
+            </ng-template>
+          </ngb-tab>
+
+</ngb-tabset>
+
+</div>
+
+
